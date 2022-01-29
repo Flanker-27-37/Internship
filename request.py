@@ -16,8 +16,6 @@ array_numbers = np.array([])
 array_dash = np.array([])
 array_user_agent = np.array([])
 
-
-
 array_lines =  data.split("\n") #  разбиение данных на строки
 
 # разбиение строк на отдельные фрагменты и запись фрагментов в ряды
@@ -32,12 +30,13 @@ for i in range(len(array_lines)-1):
     array_user_agent = np.append(array_user_agent, split_temp[5])
     print(i)
 
-
 # сборка рядов в таблицу
 df_log = pd.DataFrame({"ip": array_ip, "date" : array_date, "way" : array_way,
                        "numbers" : array_numbers, "dash" : array_dash, "user agent" : array_user_agent})
 
 export_csv = df_log.to_csv(r'log file.csv', index=None, header=True)
+
+
 
 
 
